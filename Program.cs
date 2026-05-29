@@ -16,6 +16,8 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+app.UseStatusCodePagesWithReExecute("/NotFound");
+
 app.UseHttpsRedirection();
 
 app.UseRouting();
