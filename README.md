@@ -33,6 +33,14 @@ dotnet new gitignore
 
 ## 如何啟動專案
 您可以透過以下指令啟動此專案：
+
+**一般執行模式：**
 ```bash
 dotnet run
+```
+
+**開發者模式 (熱重載 Hot Reload)：**
+（推薦使用此模式，當你修改程式碼並存檔時，API 伺服器會自動重新載入，無須手動重啟）
+```bash
+dotnet watch run
 ```

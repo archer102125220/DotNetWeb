@@ -3,6 +3,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 
+// 註冊 ProductService 作為單例 (Singleton) 以便在整個應用程式中共用此服務和記憶體資料
+builder.Services.AddSingleton<DotNetWeb.Services.ProductService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

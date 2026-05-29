@@ -33,6 +33,14 @@ dotnet new gitignore
 
 ## How to Run the Project
 You can run this project using the following command:
+
+**Normal Run Mode:**
 ```bash
 dotnet run
+```
+
+**Developer Mode (Hot Reload):**
+(Recommended for development. When you modify and save the code, the API server will automatically reload without requiring a manual restart.)
+```bash
+dotnet watch run
 ```

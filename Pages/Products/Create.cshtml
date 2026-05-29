@@ -1,0 +1,42 @@
+@page
+@model DotNetWeb.Pages.Products.CreateModel
+@{
+    ViewData["Title"] = "新增產品";
+}
+
+<h1>新增產品 (Create)</h1>
+
+<h4>填寫產品資料</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <!-- 表單，預設會送出 POST 請求到相同的 URL -->
+        <form method="post">
+            <!-- 顯示整體的錯誤訊息 -->
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group mb-3">
+                <!-- asp-for 會自動產生對應 Product.Name 的標籤和輸入框 -->
+                <label asp-for="Product.Name" class="control-label"></label>
+                <input asp-for="Product.Name" class="form-control" />
+                <span asp-validation-for="Product.Name" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group mb-3">
+                <label asp-for="Product.Price" class="control-label"></label>
+                <input asp-for="Product.Price" class="form-control" />
+                <span asp-validation-for="Product.Price" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group mb-3">
+                <input type="submit" value="新增" class="btn btn-primary" />
+                <a asp-page="Index" class="btn btn-secondary">返回列表</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- 引入前端的驗證腳本 -->
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

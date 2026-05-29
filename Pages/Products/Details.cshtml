@@ -1,0 +1,38 @@
+@page "{id:int}"
+@model DotNetWeb.Pages.Products.DetailsModel
+@{
+    ViewData["Title"] = "產品詳細資料";
+}
+
+<h1>產品詳細資料 (Details)</h1>
+
+<div>
+    <h4>產品</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Product.Id)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Product.Id)
+        </dd>
+        
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Product.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Product.Name)
+        </dd>
+        
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Product.Price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Product.Price)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Product.Id" class="btn btn-primary">編輯</a>
+    <a asp-page="./Index" class="btn btn-secondary">返回列表</a>
+</div>
